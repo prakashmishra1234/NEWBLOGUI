@@ -1,4 +1,5 @@
 import React from "react";
+import { useCookies, withCookies } from "react-cookie";
 import { Route, Routes } from "react-router-dom";
 import Layout from "../layout/Layout";
 import Login from "../screens/auth/Login";
@@ -41,4 +42,4 @@ const Navigation = () => {
   );
 };
 
-export default Navigation;
+export default withCookies(Navigation);

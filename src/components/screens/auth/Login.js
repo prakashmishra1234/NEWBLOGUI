@@ -13,7 +13,6 @@ const Login = () => {
   const navigate = useNavigate();
 
   const onClickLogin = (value) => {
-    console.log(value);
     const body = {
       email: value.email,
       password: value.password,
@@ -22,7 +21,6 @@ const Login = () => {
       .post("login", body)
       .then((res) => {
         context.setIslogin(true);
-        context.setToken(res.token);
         navigate(Routeconstant.HOME);
       })
       .catch((err) => {

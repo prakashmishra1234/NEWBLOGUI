@@ -42,8 +42,7 @@ const Header = () => {
     instance
       .get("logout")
       .then((res) => {
-        context.setIslogin(true);
-        context.setToken(res.token);
+        context.setIslogin(false);
       })
       .catch((err) => {
         console.log(err);
@@ -112,24 +111,25 @@ const Header = () => {
                   <Typography textAlign="center">Create</Typography>
                 </MenuItem>
               </Link>
-
-              <Box
-                sx={{
-                  mr: 2,
-                  display: { xs: "block", md: "none" },
-                }}
-              >
-                <Link to={Routeconstant.LOGIN}>
-                  <MenuItem onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">Login</Typography>
-                  </MenuItem>
-                </Link>
-                <Link to={Routeconstant.SIGNUP}>
-                  <MenuItem onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">SignUp</Typography>
-                  </MenuItem>
-                </Link>
-              </Box>
+              {context.isLogin ? null : (
+                <Box
+                  sx={{
+                    mr: 2,
+                    display: { xs: "block", md: "none" },
+                  }}
+                >
+                  <Link to={Routeconstant.LOGIN}>
+                    <MenuItem onClick={handleCloseNavMenu}>
+                      <Typography textAlign="center">Login</Typography>
+                    </MenuItem>
+                  </Link>
+                  <Link to={Routeconstant.SIGNUP}>
+                    <MenuItem onClick={handleCloseNavMenu}>
+                      <Typography textAlign="center">SignUp</Typography>
+                    </MenuItem>
+                  </Link>
+                </Box>
+              )}
             </Menu>
           </Box>
           <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />

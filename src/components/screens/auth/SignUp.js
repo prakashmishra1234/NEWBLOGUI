@@ -23,7 +23,6 @@ const SignUp = () => {
       .post("register", body)
       .then((res) => {
         context.setIslogin(true);
-        context.setToken(res.token);
         navigate(Routeconstant.HOME);
       })
       .catch((err) => {
