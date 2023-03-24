@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -37,6 +37,21 @@ const Header = () => {
 
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
+  };
+
+  useEffect(() => {
+    if (context.isLogin) getUserData();
+  }, [context.isLogin]);
+
+  const getUserData = () => {
+    instance
+      .get("me")
+      .then((res) => {
+        context.setUserData(res?.user ?? {});
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   const onClickLogout = () => {
@@ -193,7 +208,14 @@ const Header = () => {
             <Box sx={{ flexGrow: 0 }}>
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                  <Avatar
+                    alt="Remy Sharp"
+                    src={`https://ui-avatars.com/api/?name=${
+                      context.userData.name
+                        ? context?.userData?.name.split("")[0] ?? ""
+                        : ""
+                    }`}
+                  />
                 </IconButton>
               </Tooltip>
               <Menu

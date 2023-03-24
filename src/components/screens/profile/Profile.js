@@ -1,25 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import instance from "../../../api/Interceptor";
+import { AuthContext } from "../../../store/store";
 
 const Profile = () => {
-  const [userData, setUserData] = useState({});
-  useEffect(() => {
-    getUserData();
-  }, []);
-
-  const getUserData = () => {
-    instance
-      .get("me")
-      .then((res) => {
-        setUserData(res?.user ?? {});
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
+  const context = useContext(AuthContext);
   return (
     <div>
-      <h1>{userData.name ?? "N/A"}</h1>
+      <h1>{context.userData.name ?? "N/A"}</h1>
     </div>
   );
 };
