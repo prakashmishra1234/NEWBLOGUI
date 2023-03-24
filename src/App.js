@@ -4,7 +4,6 @@ import Navigation from "./components/routing/Navigation";
 import { BrowserRouter } from "react-router-dom";
 import { AuthProvider } from "./store/store";
 import { Toaster } from "react-hot-toast";
-import { withCookies } from "react-cookie";
 
 function App() {
   return (
@@ -21,4 +20,4 @@ function App() {
   );
 }
 
-export default withCookies(App);
+export default App;

@@ -16,6 +16,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Routeconstant } from "../routing/Routeconstant";
 import { AuthContext } from "../../store/store";
 import instance from "../../api/Interceptor";
+import { LOCAL_STORAGE_KEY } from "../../Config";
 
 const Header = () => {
   const context = useContext(AuthContext);
@@ -42,6 +43,7 @@ const Header = () => {
     instance
       .get("logout")
       .then((res) => {
+        localStorage.removeItem(LOCAL_STORAGE_KEY);
         context.setIslogin(false);
       })
       .catch((err) => {

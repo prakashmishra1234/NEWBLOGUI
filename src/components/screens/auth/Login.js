@@ -21,6 +21,10 @@ const Login = () => {
     instance
       .post("login", body)
       .then((res) => {
+        localStorage.setItem(
+          LOCAL_STORAGE_KEY,
+          JSON.stringify({ isLoggesIn: true })
+        );
         context.setIslogin(true);
         navigate(Routeconstant.HOME);
       })
