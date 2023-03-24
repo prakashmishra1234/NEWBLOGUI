@@ -8,6 +8,7 @@ import { LoginValidator } from "../../../helper/helper";
 import { AuthContext } from "../../../store/store";
 import { Routeconstant } from "../../routing/Routeconstant";
 import { LOCAL_STORAGE_KEY } from "../../../Config";
+import { toast } from "react-hot-toast";
 const Login = () => {
   const context = useContext(AuthContext);
   const navigate = useNavigate();
@@ -24,7 +25,8 @@ const Login = () => {
         navigate(Routeconstant.HOME);
       })
       .catch((err) => {
-        console.log(err);
+        toast.error(err.response.data.message ?? "Something went wrong");
+        console.log();
       });
   };
   return (

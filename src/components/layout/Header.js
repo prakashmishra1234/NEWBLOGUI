@@ -12,14 +12,14 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Routeconstant } from "../routing/Routeconstant";
 import { AuthContext } from "../../store/store";
 import instance from "../../api/Interceptor";
 
 const Header = () => {
   const context = useContext(AuthContext);
-
+  const navigate = useNavigate(AuthContext);
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -211,7 +211,14 @@ const Header = () => {
                 onClose={handleCloseUserMenu}
               >
                 <MenuItem onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">My Profile</Typography>
+                  <Typography
+                    textAlign="center"
+                    onClick={() => {
+                      navigate(Routeconstant.PROFILE);
+                    }}
+                  >
+                    My Profile
+                  </Typography>
                 </MenuItem>
                 <MenuItem
                   onClick={() => {

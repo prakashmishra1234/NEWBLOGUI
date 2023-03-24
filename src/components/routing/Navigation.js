@@ -1,10 +1,10 @@
 import React from "react";
-import { useCookies, withCookies } from "react-cookie";
 import { Route, Routes } from "react-router-dom";
 import Layout from "../layout/Layout";
 import Login from "../screens/auth/Login";
 import SignUp from "../screens/auth/SignUp";
 import CreatePost from "../screens/create/CreatePost";
+import Profile from "../screens/profile/Profile";
 import ProtectedRoute from "./components/ProtectedRoute";
 import PublicRoute from "./components/PublicRoute.js";
 import { Routeconstant } from "./Routeconstant";
@@ -37,9 +37,17 @@ const Navigation = () => {
             </ProtectedRoute>
           }
         />
+        <Route
+          path={Routeconstant.PROFILE}
+          element={
+            <ProtectedRoute>
+              <Profile />
+            </ProtectedRoute>
+          }
+        />
       </Route>
     </Routes>
   );
 };
 
-export default withCookies(Navigation);
+export default Navigation;
