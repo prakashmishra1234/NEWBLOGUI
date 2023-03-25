@@ -62,8 +62,8 @@ const about = () => {
           </Paper>
         </Grid>
         <Work />
-        <Edu />
         <Skills />
+        <Edu />
       </Grid>
     </Box>
   );
