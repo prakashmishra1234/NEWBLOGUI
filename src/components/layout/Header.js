@@ -124,11 +124,17 @@ const Header = () => {
                   <Typography textAlign="center">Home</Typography>
                 </MenuItem>
               </Link>
+              <Link to={Routeconstant.ABOUT}>
+                <MenuItem onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center">About</Typography>
+                </MenuItem>
+              </Link>
               <Link to={Routeconstant.CREATE}>
                 <MenuItem onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">Create</Typography>
                 </MenuItem>
               </Link>
+
               {context.isLogin ? null : (
                 <Box
                   sx={{
@@ -190,6 +196,18 @@ const Header = () => {
               onClick={handleCloseNavMenu}
             >
               Home
+            </Link>
+            <Link
+              to={Routeconstant.ABOUT}
+              style={{
+                color: "white",
+                textDecoration: "none",
+                display: "block",
+                margin: "0 1rem",
+              }}
+              onClick={handleCloseNavMenu}
+            >
+              About
             </Link>
             <Link
               style={{
