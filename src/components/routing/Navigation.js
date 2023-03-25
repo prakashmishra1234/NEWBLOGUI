@@ -61,9 +61,9 @@ const Navigation = () => {
         <Route
           path={Routeconstant.ABOUT}
           element={
-            <ProtectedRoute>
-              <About />
-            </ProtectedRoute>
+            // <ProtectedRoute>
+            <About />
+            // </ProtectedRoute>
           }
         />
       </Route>

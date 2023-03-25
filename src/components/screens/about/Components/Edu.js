@@ -27,27 +27,9 @@ const Edu = () => {
               }}
             >
               <Typography sx={{ paddingRight: "0.5rem" }}>
-                Bachelor of Engineering ( Mechanical Engineering )
-              </Typography>
-              <Typography sx={{ paddingRight: "0.5rem" }}>from</Typography>
-              <Typography sx={{ paddingRight: "0.5rem" }}>
-                <b>Sant Longowal Institute of Engineering and Technology</b>
-              </Typography>
-            </Grid>
-            <Grid
-              item
-              xs={12}
-              style={{
-                display: "flex",
-                paddingTop: "0",
-              }}
-            >
-              <Typography sx={{ paddingRight: "0.5rem" }}>
-                (July 2019
-              </Typography>
-              <Typography sx={{ paddingRight: "0.5rem" }}>to</Typography>
-              <Typography sx={{ paddingRight: "0.5rem" }}>
-                June 2022)
+                Bachelor of Engineering (Mechanical Engineering) from{" "}
+                <b>Sant Longowal Institute of Engineering and Technology</b>{" "}
+                (July 2019 to June 2022)
               </Typography>
             </Grid>
             <Grid
@@ -58,27 +40,9 @@ const Edu = () => {
               }}
             >
               <Typography sx={{ paddingRight: "0.5rem" }}>
-                Diploma ( Mechanical Engineering )
-              </Typography>
-              <Typography sx={{ paddingRight: "0.5rem" }}>from</Typography>
-              <Typography sx={{ paddingRight: "0.5rem" }}>
-                <b>Sant Longowal Institute of Engineering and Technology</b>
-              </Typography>
-            </Grid>
-            <Grid
-              item
-              xs={12}
-              style={{
-                display: "flex",
-                paddingTop: "0",
-              }}
-            >
-              <Typography sx={{ paddingRight: "0.5rem" }}>
-                (July 2016
-              </Typography>
-              <Typography sx={{ paddingRight: "0.5rem" }}>to</Typography>
-              <Typography sx={{ paddingRight: "0.5rem" }}>
-                June 2019)
+                Diploma (Mechanical Engineering) from{" "}
+                <b>Sant Longowal Institute of Engineering and Technology</b>{" "}
+                (July 2016 to June 2019)
               </Typography>
             </Grid>
             <Grid
@@ -89,22 +53,8 @@ const Edu = () => {
               }}
             >
               <Typography sx={{ paddingRight: "0.5rem" }}>
-                Matriculation
+                Matriculation from <b>Darbhanga Public School</b> (2016)
               </Typography>
-              <Typography sx={{ paddingRight: "0.5rem" }}>from</Typography>
-              <Typography sx={{ paddingRight: "0.5rem" }}>
-                <b>Darbhanga Public School</b>
-              </Typography>
-            </Grid>
-            <Grid
-              item
-              xs={12}
-              style={{
-                display: "flex",
-                paddingTop: "0",
-              }}
-            >
-              <Typography sx={{ paddingRight: "0.5rem" }}>( 2016 )</Typography>
             </Grid>
           </Grid>
         </Box>
