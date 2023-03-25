@@ -28,6 +28,11 @@
   color: #61dafb;
 }
 
+.MuiSkeleton-root.MuiSkeleton-text.MuiSkeleton-pulse {
+  transform: none;
+  -webkit-transform: none;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

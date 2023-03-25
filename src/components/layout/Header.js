@@ -60,6 +60,7 @@ const Header = () => {
       .then((res) => {
         localStorage.removeItem(LOCAL_STORAGE_KEY);
         context.setIslogin(false);
+        navigate(Routeconstant.LOGIN);
       })
       .catch((err) => {
         console.log(err);
@@ -200,7 +201,7 @@ const Header = () => {
               to={Routeconstant.CREATE}
               onClick={handleCloseNavMenu}
             >
-              create
+              Create
             </Link>
           </Box>
 
@@ -239,6 +240,8 @@ const Header = () => {
                     textAlign="center"
                     onClick={() => {
                       navigate(Routeconstant.PROFILE);
+                      handleCloseNavMenu();
+                      handleCloseUserMenu();
                     }}
                   >
                     My Profile
@@ -247,6 +250,7 @@ const Header = () => {
                 <MenuItem
                   onClick={() => {
                     handleCloseNavMenu();
+                    handleCloseUserMenu();
                     onClickLogout();
                   }}
                 >

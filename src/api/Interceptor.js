@@ -1,5 +1,5 @@
 import axios from "axios";
-import { baseUrl } from "../Config.js";
+import { baseUrl, LOCAL_STORAGE_KEY } from "../Config.js";
 
 const instance = axios.create({
   baseURL: baseUrl,
@@ -15,8 +15,13 @@ instance.interceptors.response.use(
     return response.data;
   },
   (error) => {
-    console.log(error);
-    return Promise.reject(error);
+    console.log(error.response.status);
+    if (error.response.status === 401) {
+      localStorage.removeItem(LOCAL_STORAGE_KEY);
+      window.location.reload();
+    } else {
+      return Promise.reject(error);
+    }
   }
 );
 

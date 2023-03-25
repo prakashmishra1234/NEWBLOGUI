@@ -9,8 +9,16 @@ const Layout = () => {
         <Header />
       </div>
 
-      <div style={{ height: "calc(100% - 4rem)", padding: "1rem" }}>
-        <Outlet />
+      <div
+        style={{
+          height: "calc(100% - 4rem)",
+          padding: "1rem",
+          overflowY: "auto",
+        }}
+      >
+        <div className="container">
+          <Outlet />
+        </div>
       </div>
     </div>
   );
