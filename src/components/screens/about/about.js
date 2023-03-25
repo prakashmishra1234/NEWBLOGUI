@@ -9,6 +9,7 @@ import {
 import React from "react";
 import { baseName } from "../../../Config";
 import Edu from "./Components/Edu";
+import Personal from "./Components/Personal";
 import Skills from "./Components/Skills.js";
 import Work from "./Components/Work";
 
@@ -61,6 +62,7 @@ const about = () => {
             </Box>
           </Paper>
         </Grid>
+        <Personal />
         <Work />
         <Skills />
         <Edu />
