@@ -8,6 +8,8 @@ import {
 } from "@mui/material";
 import React from "react";
 import { baseName } from "../../../Config";
+import Edu from "./Components/Edu";
+import Skills from "./Components/Skills.js";
 import Work from "./Components/Work";
 
 const about = () => {
@@ -60,6 +62,8 @@ const about = () => {
           </Paper>
         </Grid>
         <Work />
+        <Edu />
+        <Skills />
       </Grid>
     </Box>
   );
